@@ -1,3 +1,4 @@
-# flutter_app
+Fit Flexion - Fitness Uygulaması
 
-A new Flutter project.
+İstinye Üniversitesi Bitirme Projesi
+
