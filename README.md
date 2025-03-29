@@ -1,2 +1,3 @@
-# Fit-Flexion
-Istinye Universty Finishing Project
+# flutter_app
+
+A new Flutter project.
