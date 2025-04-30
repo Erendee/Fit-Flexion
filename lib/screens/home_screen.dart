@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,56 +8,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       // AppBar
-      appBar: AppBar(
-        title: const Text('Ana Sayfa'),
-        actions: [
-          IconButton(icon: const Icon(CupertinoIcons.bell), onPressed: () {}),
-        ],
-      ),
-
-      // Drawer (Yan Menü)
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Drawer Header
-            Container(
-              height: 200,
-              color: Colors.blue,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.white,
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Kullanıcı Adı',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  ),
-                ],
-              ),
-            ),
-            // Menü öğeleri
-            ListTile(
-              leading: const Icon(CupertinoIcons.home),
-              title: const Text('Ana Sayfa'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(CupertinoIcons.settings),
-              title: const Text('Ayarlar'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      appBar: AppBar(title: const Text('Fit Flexion')),
 
       // Ana içerik
       body: Column(
@@ -64,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(16),
-              child: const Text('Ana Sayfa İçeriği'),
+              child: const Text('Fitness uygulamamıza hoş geldiniz'),
             ),
           ),
         ],
@@ -74,16 +28,24 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Ana Sayfa',
+            icon: Icon(FontAwesomeIcons.dumbbell),
+            label: 'Antrenmanlar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Keşfet',
+            icon: Icon(FontAwesomeIcons.penToSquare),
+            label: 'Anımsatıcı',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
-            label: 'Profil',
+            icon: Icon(FontAwesomeIcons.calendar),
+            label: 'Günlük',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.book),
+            label: 'El Kitabı',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.ellipsis),
+            label: 'Diğer',
           ),
         ],
         onTap: (index) {
