@@ -43,8 +43,6 @@ class LoadingScreen extends StatelessWidget {
                 ),
               ),
             ),
-
-            SizedBox(height: 20),
           ],
         ),
       ),

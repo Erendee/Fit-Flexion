@@ -9,62 +9,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFC5CAE9),
       // AppBar
-      appBar: AppBar(title: const Text('Fit Flexion')),
-
-      drawer: Drawer(
-        child: Column(
-          children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                child: Icon(
-                  CupertinoIcons.person_circle,
-                  size: 50,
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
-                ),
-              ),
-              accountName: Text("Hoşgeldiniz"),
-              accountEmail: null,
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-            ),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.dumbbell),
-              title: Text('Ana Sayfa'),
-              onTap: () => Navigator.pop(context),
-            ),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.penToSquare),
-              title: Text('Anımsatıcı'),
-              onTap: () => context.push("/reminder"),
-            ),
-            ListTile(
-              leading: Icon(FontAwesomeIcons.calendar),
-              title: Text('Takvim'),
-              onTap: () => context.push("/calendar"),
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.book),
-              title: Text('El Kitabı'),
-              onTap: () => context.push("/book"),
-            ),
-            ListTile(
-              leading: Icon(CupertinoIcons.ellipsis),
-              title: Text('Diğer'),
-              onTap: () => context.push("/another"),
-            ),
-            Spacer(),
-            Divider(),
-            ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Çıkış Yap'),
-              // onTap: () => context.go("/login"),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text('Ana Sayfa'),
+        actions: [
+          IconButton(icon: const Icon(CupertinoIcons.bell), onPressed: () {}),
+        ],
       ),
 
       // Ana içerik
@@ -73,12 +24,40 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(16),
-              child: const Text('Fitness uygulamamıza hoş geldiniz'),
+              child: const Text('Ana Sayfa İçeriği'),
             ),
           ),
         ],
       ),
+
+      // Menü öğeleri
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.dumbbell),
+            label: 'Ana Sayfa',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.penToSquare),
+            label: 'Anımsatıcı',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FontAwesomeIcons.calendar),
+            label: 'Takvim',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.book_fill),
+            label: 'El Kitabı',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.ellipsis),
+            label: 'Diğer',
+          ),
+        ],
+        onTap: (index) {
+          // Navigasyon işlemleri buraya gelecek
+        },
+      ),
     );
-    // Navigasyon işlemleri buraya gelecek
   }
 }
