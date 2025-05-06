@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/widgets/bottom_menu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,9 +13,13 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: const Color(0xFFC5CAE9),
       // AppBar
       appBar: AppBar(
-        title: const Text('Ana Sayfa'),
+        title: const Text('Fit Flexion'),
         actions: [
-          IconButton(icon: const Icon(CupertinoIcons.bell), onPressed: () {}),
+          IconButton(
+            icon: const Icon(FontAwesomeIcons.fire),
+            color: Colors.deepOrange,
+            onPressed: () {},
+          ),
         ],
       ),
 
@@ -24,40 +29,14 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Container(
               padding: const EdgeInsets.all(16),
-              child: const Text('Ana Sayfa İçeriği'),
+              child: const Text('Uygulamamıza Hoş Geldiniz'),
             ),
           ),
         ],
       ),
 
-      // Menü öğeleri
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.dumbbell),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.penToSquare),
-            label: 'Anımsatıcı',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.calendar),
-            label: 'Takvim',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.book_fill),
-            label: 'El Kitabı',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.ellipsis),
-            label: 'Diğer',
-          ),
-        ],
-        onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
-        },
-      ),
+      // Alt navigasyon çubuğu
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }
