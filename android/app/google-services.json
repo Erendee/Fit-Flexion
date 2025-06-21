@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "628976997973",
+    "project_id": "fit-flexion",
+    "storage_bucket": "fit-flexion.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628976997973:android:b9aa1788f646ccd1aae6dc",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1vMS9KlrIB-C7pCihe5sqtXfAZZqpVuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
